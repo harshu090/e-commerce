@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Signup</title>
+    <!-- <link rel="stylesheet" href="./CSS FILES/signup.css"> -->
+    <style>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}       
+.container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+}
+button {
+    padding: 8px 20px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+a {
+    text-decoration: none;
+    color: #1d04fa; 
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: aquamarine;
+    margin-right: 10px;
+}
+
+a:hover {
+    background-color: #06a5f4; 
+    color: coral;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>User Signup</h2>
+        <form id="signupForm">
+            <label for="fullName">Full Name:</label>
+            <input type="text" id="fullName" placeholder="Enter Your Full Name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" placeholder="Enter Your Email" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" placeholder="Enter Your Password" required>
+            <button type="submit">Sign Up</button>
+            <p>Already Have An Account?</p><a href="login page.html">Login</a>
+        </form>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const signupForm = document.getElementById('signupForm');
+        
+            signupForm.addEventListener('submit', function(event) {
+                event.preventDefault(); 
+        
+                const fullName = document.getElementById('fullName').value;
+                const email = document.getElementById('email').value;
+                const password = document.getElementById('password').value;
+        
+                const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+                const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/;
+        
+                if (!email.match(emailRegex)) {
+                    alert('Please enter a valid email address.');
+                } else if (!password.match(passwordRegex)) {
+                    alert('Password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, one number, and one special character.');
+                } else {
+                    alert('Signup successful! Redirecting to Login page...');
+                    setTimeout(function() {
+                        window.open('login page.html', '_blank'); 
+                    }, 2000); 
+                    signupForm.reset();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
