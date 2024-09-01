@@ -1,22 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart - Family Zone</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+</head>
 
-        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+            <div class="company"></div>
+            <h3>Family Zone</h3>
+        </a>
+        <div class="products">
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li class="nav-item"><a class="nav-link" href="cart.html"><i class="fa fa-shopping-bag"></i></a></li>
+            </ul>
+        </div>
+    </nav>
 
-        <link rel="stylesheet" href="style.css">
-    </head>
+    <div class="container my-5">
+        <h1 class="text-center">Your Cart</h1>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Image</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Example product row -->
+                <tr>
+                    <td>Matching Kurta Jacket</td>
+                    <td><img src="./accesses/family dress-5.webp" class="img-fluid" alt="Matching Kurta Jacket" style="width: 100px;"></td>
+                    <td>$50.00</td>
+                    <td>
+                        <input type="number" class="form-control" value="1" min="1">
+                    </td>
+                    <td>$50.00</td>
+                    <td><button class="btn btn-danger">Remove</button></td>
+                </tr>
+                <!-- Repeat rows for each item in the cart -->
+            </tbody>
+        </table>
 
-    <body>
+        <div class="row">
+            <div class="col-md-6">
+                <a href="shop.html" class="btn btn-primary">Continue Shopping</a>
+            </div>
+            <div class="col-md-6 text-right">
+                <h3>Total: $50.00</h3>
+                <a href="checkout.html" class="btn btn-success">Checkout</a>
+            </div>
+        </div>
+    </div>
 
+    <footer class="footer mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <h4>About</h4>
+                    <a href="#">About us</a><br>
+                    <a href="#">Delivery information</a><br>
+                    <a href="#">Privacy policy</a><br>
+                    <a href="#">Terms and conditions</a><br>
+                    <a href="#">Contact us</a>
+                </div>
+                <div class="col-md-3">
+                    <h4>My Account</h4>
+                    <a href="#">Sign in</a><br>
+                    <a href="#">View cart</a><br>
+                    <a href="#">My wishlist</a><br>
+                    <a href="#">Track my order</a><br>
+                    <a href="#">Help</a>
+                </div>
+                <div class="col-md-6">
+                    <h4>Follow Us</h4>
+                    <a href="#"><i class="fa-brands fa-facebook-square"></i> Facebook</a><br>
+                    <a href="#"><i class="fa-brands fa-snapchat-square"></i> Snapchat</a><br>
+                    <a href="#"><i class="fa-brands fa-instagram-square"></i> Instagram</a>
+                </div>
+            </div>
+            <p class="text-center mt-4">&copy; 2024 Family Zone. All rights reserved.</p>
+        </div>
+    </footer>
 
-        <script src="script.js"></script>
-
-    </body>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
 
 </html>
